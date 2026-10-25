@@ -1,4 +1,0 @@
-@import "tailwindcss";
-/* TEMPLATE: After copying this app to the monorepo root, change "../../../../" to "../../../" */
-@source "../../../../rivvy-ui/src/**/*.{js,ts,jsx,tsx}";
-@import "../../../../rivvy-ui/src/styles/globals.css";
