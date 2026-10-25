@@ -6,6 +6,8 @@ Data comes from the [DPWH Transparency Portal](https://transparency.dpwh.gov.ph)
 
 → Full product spec: [`ghostbusters-spec.md`](./ghostbusters-spec.md)
 
+<img width="1469" height="833" alt="image" src="https://github.com/user-attachments/assets/063bdb7b-b459-40a2-8da1-b3cab00ca71c" />
+
 ---
 
 ## Tech stack
