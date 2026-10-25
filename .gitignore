@@ -1,0 +1,47 @@
+# Configuration files
+*.toml
+!config.template.toml
+.vim/
+.vimrc
+
+# Environment files
+.env
+
+# Log files
+log/
+*.log
+logs/
+
+# JWT key pairs
+*.pem
+*.pub
+
+# Certificate files
+*.crt
+*.cert
+
+# Miscellaneous files
+.DS_Store
+.swc
+
+# Temporary files and note files
+*.tmp
+*.tmp.*
+*.notes.md
+todo
+
+**/dist
+
+# dependencies
+**/node_modules
+**/venv
+**/.pnp
+**/.pnp.*
+**/.yarn/*
+!**/.yarn/patches
+!**/.yarn/plugins
+!**/.yarn/releases
+!**/.yarn/versions
+
+# Local files
+/data

@@ -1,0 +1,95 @@
+# Settings related to how the application runs
+[application]
+  # Specifies how the application will run
+  # Has a value of either "development" or "production". Defaults to "development"
+  environment = "development"
+
+  # Directory where log files will be placed
+  # Has a path string type. Required
+  log-directory = "./logs"
+
+  # Hostname for the server
+  # Has an IP address or domain string type. Required
+  host = "0.0.0.0"
+
+  # Indicates which port the API server is served
+  # Has an integer type. Required only when the environment is in 'development' mode
+  # TEMPLATE: Assign a port that doesn't conflict with other services
+  port = 8000
+
+  # Domain used by the application
+  # Has an IP address string type or domain string type. Must include the protocol (http or https). Required
+  # TEMPLATE: Update to match your service's port
+  domain = "http://localhost:8000"
+
+  # Indicates if the application should enable zulip chat notifications features
+  # Has a boolean type. Defaults to false
+  enable-zulip-notifications = false
+
+# Database connectivity settings
+[database]
+  # PostgreSQL-specific database connectivity settings
+  [database.psql]
+    # Connection string to the PostgreSQL database. Note that special characters
+    #  such as '#', ':', and '@' in the password needs to be percent-encoded
+    # Has a URI string type. Required
+    connection-string = "postgres://localhost:5432/rivvy"
+
+    # TLS Certificate for the PostgreSQL database. Uncomment the variable
+    #  if the connection string requires a TLS certificate to connect to
+    #  the PostgreSQL database instance.
+    # Has a path string type. Optional
+    tls-cert = ""
+
+    # PostgreSQL-specific database connectivity settings meant for integration/e2e tests
+    [database.psql.testing]
+      # Connection string to the PostgreSQL database. Note that special characters
+      #  such as '#', ':', and '@' in the password needs to be percent-encoded
+      # Has a URI string type. Required
+      connection-string = "postgres://localhost:5432/rivvy_test"
+
+      # TLS Certificate for the PostgreSQL database. Uncomment the variable
+      #  if the connection string requires a TLS certificate to connect to
+      #  the PostgreSQL database instance.
+      # Has a path string type. Optional
+      tls-cert = ""
+
+  # Redis-specific database connectivity settings
+  [database.redis]
+    # Hostname of the Redis database
+    # Has a string type. Required
+    host = "localhost"
+
+    # Port number of the Redis database
+    # Has an integer type. Defaults to 6379
+    port = 6379
+
+    # Password for the Redis database connection
+    # Has a string type. Defaults to ''
+    password = ""
+
+    # The Redis DB index the application will utilize
+    # Has an integer type. Defaults to 0
+    db-index = 0
+
+    # Redis-specific database connectivity settings meant for integration/e2e tests
+    [database.redis.testing]
+      # Hostname of the Redis database
+      # Has a string type. Required
+      host = "localhost"
+
+      # Port number of the Redis database
+      # Has an integer type. Defaults to 6379
+      port = 6379
+
+      # Password for the Redis database connection
+      # Has a string type. Defaults to ''
+      password = ""
+
+      # The Redis DB index the application will utilize
+      # Has an integer type. Defaults to 0
+      db-index = 10
+
+# TEMPLATE: Add service-specific integrations here, e.g. [integrations.stripe], [integrations.cloudflare].
+# Remove this entire section if your service has no external integrations.
+# [integrations]

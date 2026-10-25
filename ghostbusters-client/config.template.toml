@@ -1,0 +1,26 @@
+# Settings related to how the application runs
+[application]
+  # Specifies how the application will run
+  # Has a value of either "development" or "production". Defaults to "development"
+  environment = "development"
+
+  # Domain used by the application
+  # Has an IP address string type or domain string type. Must include the protocol (http or https). Required
+  domain = "http://localhost:3000"
+
+  # Settings related to the backend server this app proxies requests to
+  [application.server]
+
+    # Base URL of the backend service — all /api/* requests are forwarded here
+    # Has a string type. Required
+    base-url = "http://localhost:8001"
+
+    [application.server.testing]
+
+      # Base URL for the testing backend server
+      # Has a string type. Required
+      base-url = "http://localhost:3003/api/v1"
+
+[maptiler]
+  # MapTiler API key — get one at https://cloud.maptiler.com
+  api-key = ""

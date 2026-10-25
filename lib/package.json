@@ -1,0 +1,36 @@
+{
+  "name": "rivvy-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./styles": "./styles/globals.css",
+    "./router/route": "./router/route.ts",
+    "./router/provider": "./router/RouterProvider.tsx",
+    "./router/hooks": "./router/hooks.ts",
+    "./router/types": "./router/types.ts"
+  },
+  "bin": {
+    "generate-routes": "./router/generate-routes.js"
+  },
+  "scripts": {
+    "format": "prettier -w ."
+  },
+  "dependencies": {
+    "bootstrap-icons": "catalog:",
+    "react-hook-form": "catalog:",
+    "zod": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
+  }
+}

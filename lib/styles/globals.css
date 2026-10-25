@@ -1,0 +1,471 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@theme {
+  --color-primary-dark: oklch(0.545 0.211 34.62);
+  --color-primary: oklch(0.6278 0.211 34.62); /*#EC4417*/
+  --color-primary-light: oklch(0.909 0.211 34.62);
+  --color-primary-transparent: oklch(0.6278 0.211 34.62 / 25%);
+
+  --color-secondary: oklch(0.4279 0.0614 212.45); /*#1E5863*/
+
+  --color-light-element: oklch(0.9 0 0);
+  --color-light-surface: oklch(0.95 0 0);
+  --color-light-tinted: oklch(0.9889 0.0067 115.7); /*#FBFCF7*/
+  --color-light-base: oklch(1 0 0);
+
+  --color-dark-placeholder: oklch(0.7 0 0);
+  --color-dark-faint: oklch(0.6 0 0);
+  --color-dark-muted: oklch(0.45 0 0);
+  --color-dark-default: oklch(0.209 0 0); /*#181818*/
+
+  --color-dark-border: oklch(0.45 0 0);
+  --color-dark-stroke: oklch(0.9 0 0);
+
+  --color-support-red-light: var(--color-red-100);
+  --color-support-red: var(--color-red-600);
+  --color-support-red-dark: var(--color-red-800);
+  --color-support-orange: var(--color-orange-400);
+  --color-support-yellow-light: var(--color-yellow-200);
+  --color-support-yellow: var(--color-yellow-400);
+  --color-support-yellow-dark: var(--color-yellow-700);
+  --color-support-green-light: var(--color-green-200);
+  --color-support-green: var(--color-green-500);
+  --color-support-green-dark: var(--color-green-800);
+  --color-support-blue-light: var(--color-blue-200);
+  --color-support-blue: var(--color-blue-600);
+
+  --color-accent-charteuse: oklch(0.9123 0.1765 125.16);
+  --color-accent-ladyblue: oklch(0.5698 0.2434 289.42);
+
+  --shadow-soft: 0 0 32px 0 rgba(0, 0, 0, 0.15);
+  --shadow-strong: var(--shadow-soft), 0 0 8px 0 rgba(0, 0, 0, 0.05);
+
+  /*Checkout colors*/
+  --color-checkout-bg: var(--color-secondary);
+  --color-checkout-button: var(--color-primary);
+  --color-checkout-outline: var(--color-primary);
+  --color-checkout-text: var(--color-dark-default);
+
+  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  button {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+
+    /* medium-bold */
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+
+  /*Buttons*/
+
+  button.primary {
+    padding: 0 1.5rem;
+    height: 48px;
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  button.primary:hover,
+  button.primary:focus {
+    background-color: var(--color-primary-dark);
+    color: white;
+  }
+
+  button.primary:disabled,
+  button.danger:disabled {
+    background-color: var(--color-light-element);
+    color: var(--color-dark-muted);
+    cursor: not-allowed;
+  }
+
+  button.secondary {
+    padding: 0 1.5rem;
+    height: 48px;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: var(--color-dark-muted);
+  }
+
+  button.secondary:hover,
+  button.secondary:focus {
+    background-color: var(--color-light-element);
+    outline: none;
+  }
+
+  button.tertiary {
+    padding: 0 1.5rem;
+    height: 40px;
+    background-color: white;
+    color: var(--color-primary);
+    border-radius: 999px;
+    border: 1px solid var(--color-primary);
+  }
+
+  button.tertiary:hover,
+  button.tertiary:focus {
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+  }
+
+  button.danger {
+    padding: 0 1.5rem;
+    height: 48px;
+    border-radius: 0.5rem;
+    background-color: var(--color-support-red);
+    color: white;
+  }
+
+  button.danger:hover {
+    background-color: var(--color-support-red-dark);
+  }
+}
+
+@layer components {
+  /* Typography */
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+
+  .large-bold {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+
+  .large-regular {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+
+  .medium-bold {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
+
+  .medium-regular {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .small-bold {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1rem;
+  }
+
+  .small-regular {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1rem;
+  }
+
+  .extra-small-bold {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1rem;
+  }
+
+  .extra-small-regular {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1rem;
+  }
+
+  /* Icons */
+  .icon-large {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 2.5rem;
+  }
+
+  .icon-regular {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    line-height: 1.5rem;
+  }
+
+  .icon-small {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 1rem;
+  }
+
+  .icon-xs {
+    display: block;
+    font-size: 12px;
+    line-height: 0.75rem;
+  }
+
+  /* Links */
+  .link {
+    color: var(--color-blue-500);
+    text-decoration: underline;
+  }
+
+  .link:hover {
+    cursor: pointer;
+    color: var(--color-blue-700);
+  }
+
+  /* Hover Utilities */
+  .dark-hover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  /* Buttons */
+
+  .btn-attention {
+    border: 2px white solid;
+    isolation: isolate;
+  }
+
+  .btn-attention::after,
+  .btn-attention::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 12px);
+    width: calc(100% + 12px);
+    background-image: conic-gradient(from var(--angle), transparent 50%, oklch(0.909 0.211 34.62));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 0.75rem;
+    animation: 3s spin-angle linear infinite;
+  }
+
+  .btn-attention::before {
+    filter: blur(0.5rem);
+    opacity: 0.75;
+  }
+
+  .btn-attention-wrapper {
+    position: relative;
+  }
+
+  .btn-attention-wrapper > button {
+    position: relative;
+    z-index: 2;
+    outline: 2px solid white;
+    outline-offset: -2px;
+    animation: 2s btn-glow ease-in-out infinite;
+  }
+
+  .btn-attention-wrapper::after,
+  .btn-attention-wrapper::before {
+    content: "";
+    position: absolute;
+    height: calc(100% + 8px);
+    width: calc(100% + 8px);
+    background-image: conic-gradient(from var(--angle), transparent 50%, oklch(0.909 0.211 34.62));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+    border-radius: 0.75rem;
+    animation: 3s spin-angle linear infinite;
+  }
+
+  .btn-attention-wrapper::before {
+    filter: blur(0.5rem);
+    opacity: 0.75;
+  }
+
+  /* Cards */
+  .card {
+    box-shadow: var(--shadow-card);
+    border-radius: 0.75rem;
+  }
+
+  .card-small {
+    box-shadow: var(--shadow-card);
+    border-radius: 0.5rem;
+  }
+
+  /* Forms */
+  .form-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-input-label {
+    /* medium-bold */
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+
+  .form-input {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-dark-border);
+    background-color: white;
+
+    /* medium-regular */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .form-input::placeholder {
+    color: var(--color-dark-placeholder);
+  }
+
+  .form-input:focus-within {
+    border-color: transparent;
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+  }
+
+  .form-input:disabled {
+    color: var(--color-dark-muted);
+    background-color: var(--color-light-surface);
+    cursor: not-allowed;
+  }
+
+  .form-radio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    /* medium-regular */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  .form-error {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1rem;
+    color: var(--color-support-red);
+  }
+
+  .form-side-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: white;
+    color: var(--color-text-muted);
+
+    /* card-small */
+    box-shadow: var(--shadow-card);
+    border-radius: 0.5rem;
+  }
+
+  .form-side-btn:hover {
+    cursor: default;
+    background-color: var(--color-light-element);
+    color: white;
+  }
+
+  /* Preserve inherited font in phone input library */
+  #phone-input div {
+    font-family: inherit;
+  }
+
+  /* Tables */
+
+  .table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .table-row {
+    border-bottom: 1px solid var(--color-dark-stroke);
+  }
+
+  .table-header-cell {
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Notifications */
+  .notification {
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+    min-height: 80px;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    text-align: left;
+    border: 2px solid;
+    border-radius: 0.5rem;
+  }
+
+  .inline-notification {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 1rem;
+    text-align: left;
+    border: 2px solid;
+    border-radius: 0.5rem;
+  }
+
+  .notification-success {
+    background-color: var(--color-support-green-light);
+    border-color: var(--color-support-green);
+  }
+
+  .notification-warning {
+    background-color: var(--color-support-yellow-light);
+    border-color: var(--color-support-yellow);
+  }
+
+  .notification-error {
+    background-color: var(--color-support-red-light);
+    border-color: var(--color-support-red);
+  }
+
+  .notification-info {
+    background-color: var(--color-support-blue-light);
+    border-color: var(--color-support-blue);
+  }
+}
